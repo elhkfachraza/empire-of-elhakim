@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire of Elhakim | Where Dreams Conquer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: white; }
+        .navy-gradient { background: linear-gradient(135deg, #001F3F 0%, #050505 100%); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .card-hover:hover { border-color: #3b82f6; transform: translateY(-5px); transition: all 0.3s; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-extrabold tracking-tighter italic">EMPIRE OF <span class="text-blue-500">ELHAKIM</span></div>
+        <div class="hidden md:flex space-x-6 text-xs uppercase tracking-widest font-semibold">
+            <a href="#home" class="hover:text-blue-400">Home</a>
+            <a href="#about" class="hover:text-blue-400">About</a>
+            <a href="#news" class="hover:text-blue-400">News</a>
+            <a href="#contact" class="hover:text-blue-400">Contact</a>
+            <a href="#dashboard" onclick="checkLogin()" class="bg-blue-600 px-4 py-2 rounded-full hover:bg-white hover:text-black transition">Dashboard</a>
+        </div>
+    </nav>
+
+    <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <h2 class="text-gray-400 tracking-[0.4em] uppercase text-sm mb-4">Official Community Website</h2>
+        <h1 class="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
+            Empire of Elhakim
+        </h1>
+        <p class="text-xl italic text-blue-400 font-light">"Where Dreams Conquer"</p>
+        <div class="mt-10 animate-bounce cursor-pointer">↓</div>
+    </section>
+
+    <section id="about" class="py-24 px-10 bg-[#001F3F]/20">
+        <div class="max-w-4xl mx-auto glass p-10 rounded-3xl">
+            <h2 class="text-3xl font-bold mb-6 text-blue-400">About Server</h2>
+            <p class="text-gray-300 leading-relaxed text-lg">
+                Dibentuk oleh <strong>Kaelxx</strong>, server ini jadi wadah komunikasi buat kalian semua! Di sini, kita bisa ngobrol, berdiskusi, dan berbagi semua topik yang kalian suka—dari game, teknologi, hobi, sampai hal-hal random yang seru. Lebih dari sekadar server, ini adalah rumah digital kalian, tempat kumpulnya komunitas yang santai tapi solid. Masuk, temukan teman baru, dan jadilah bagian dari Empire yang terus berkembang!
+            </p>
+        </div>
+    </section>
+
+    <section id="dashboard" class="py-24 px-10 hidden">
+        <div class="max-w-4xl mx-auto glass p-10 rounded-3xl border-blue-500/50 border">
+            <h2 class="text-3xl font-bold mb-6">User Dashboard</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 bg-black/40 rounded-xl">
+                    <p class="text-gray-400">Nickname</p>
+                    <input type="text" value="Member_Elhakim" class="bg-transparent border-b border-gray-700 w-full py-2 outline-none focus:border-blue-500">
+                    <button class="mt-4 text-xs bg-blue-600 px-3 py-1 rounded">Update Nickname</button>
+                </div>
+                <div class="p-6 bg-black/40 rounded-xl text-sm">
+                    <p class="text-gray-400 mb-2">My Roles</p>
+                    <span class="bg-blue-900 px-2 py-1 rounded text-[10px] mr-2">Citizen</span>
+                    <span class="bg-purple-900 px-2 py-1 rounded text-[10px]">OG Member</span>
+                </div>
+            </div>
+            <div class="mt-6 p-6 bg-red-900/10 border border-red-900/30 rounded-xl">
+                <h3 class="text-red-500 font-bold mb-2">Riwayat Pelanggaran</h3>
+                <p class="text-gray-400 text-sm">Tidak ada pelanggaran tercatat. Kamu warga teladan!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 text-center">
+        <h2 class="text-2xl font-bold mb-8">Connect With Us</h2>
+        <div class="flex justify-center space-x-10">
+            <a href="https://www.youtube.com/@EmpireofElhakimID" target="_blank" class="hover:text-red-500">YouTube</a>
+            <a href="https://www.instagram.com/empireofelhakim/" target="_blank" class="hover:text-pink-500">Instagram</a>
+            <a href="https://discord.gg/B3M37c5wdt" target="_blank" class="hover:text-blue-500">Discord</a>
+        </div>
+    </section>
+
+    <div id="adminModal" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center p-6">
+        <div class="glass p-8 rounded-2xl w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-6">Admin Access</h2>
+            <input id="adminUser" type="text" placeholder="Username" class="w-full mb-4 p-3 bg-white/5 border border-white/10 rounded-lg">
+            <input id="adminPass" type="password" placeholder="Password" class="w-full mb-6 p-3 bg-white/5 border border-white/10 rounded-lg">
+            <button onclick="loginAdmin()" class="w-full bg-blue-600 py-3 rounded-lg font-bold">LOGIN</button>
+            <button onclick="closeAdmin()" class="w-full mt-2 text-gray-500 text-sm">Batal</button>
+        </div>
+    </div>
+
+    <footer class="p-10 text-center border-t border-white/5 text-gray-600 text-xs">
+        © 2024 Empire of Elhakim. Created for the Empire. 
+        <span onclick="openAdmin()" class="cursor-pointer hover:text-white">Admin Login</span>
+    </footer>
+
+    <script>
+        function openAdmin() { document.getElementById('adminModal').classList.remove('hidden'); }
+        function closeAdmin() { document.getElementById('adminModal').classList.add('hidden'); }
+        
+        function loginAdmin() {
+            const user = document.getElementById('adminUser').value;
+            const pass = document.getElementById('adminPass').value;
+            if(user === "AdminEmpireofElhakim" && pass === "Elhakim11") {
+                alert("Login Admin Berhasil! Mengalihkan ke Panel...");
+                // Logika ganti konten ke panel admin bisa ditaruh di sini
+            } else {
+                alert("Salah! Kamu bukan admin.");
+            }
+        }
+
+        function checkLogin() {
+            const loggedIn = confirm("Sistem Simulasi: Apakah kamu ingin login via Discord?");
+            if(loggedIn) {
+                document.getElementById('dashboard').classList.remove('hidden');
+                window.location.hash = "dashboard";
+            }
+        }
+    </script>
+</body>
+</html>
