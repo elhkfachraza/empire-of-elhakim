@@ -9,268 +9,268 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; overflow-x: hidden; }
-        .glass { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
         .text-gradient { background: linear-gradient(to right, #fff, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .navy-shadow { box-shadow: 0 0 40px -10px rgba(30, 58, 138, 0.4); }
-        .btn-blue { background: linear-gradient(45deg, #1e40af, #3b82f6); transition: 0.3s; }
-        .btn-blue:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4); }
-        .input-style { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; outline: none; transition: 0.3s; }
-        .input-style:focus { border-color: #3b82f6; background: rgba(255,255,255,0.08); }
+        .btn-blue { background: linear-gradient(45deg, #1e40af, #3b82f6); transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-blue:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4); }
+        .input-style { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 14px; outline: none; transition: 0.3s; }
+        .input-style:focus { border-color: #3b82f6; background: rgba(255,255,255,0.07); box-shadow: 0 0 15px rgba(59, 130, 246, 0.1); }
+        .comment-box { border-left: 2px solid #1e40af; padding-left: 1rem; margin-top: 1rem; }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-[100] glass px-8 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-[100] glass px-8 py-4 flex justify-between items-center border-b border-white/5">
         <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-black shadow-lg shadow-blue-500/30">E</div>
-            <span class="text-xl font-extrabold tracking-tighter uppercase">Empire <span class="text-blue-500">Elhakim</span></span>
+            <div class="w-10 h-10 bg-blue-700 rounded-xl flex items-center justify-center font-black shadow-lg">E</div>
+            <span class="text-xl font-extrabold tracking-tighter uppercase italic">Empire <span class="text-blue-500">Elhakim</span></span>
         </div>
-        <div class="hidden md:flex gap-8 text-xs uppercase font-bold tracking-widest">
-            <a href="#home" class="hover:text-blue-400">Home</a>
-            <a href="#about" class="hover:text-blue-400">About</a>
-            <a href="#news" class="hover:text-blue-400">News</a>
-            <a href="#contact" class="hover:text-blue-400">Contact</a>
-            <button onclick="showDashboard()" class="text-blue-400 border border-blue-400/30 px-5 py-2 rounded-full hover:bg-blue-400 hover:text-white transition">Dashboard</button>
+        <div class="hidden md:flex gap-8 text-[10px] uppercase font-bold tracking-[0.2em]">
+            <a href="#home" class="hover:text-blue-400 transition">Home</a>
+            <a href="#about" class="hover:text-blue-400 transition">About</a>
+            <a href="#news" class="hover:text-blue-400 transition">News</a>
+            <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            <button onclick="showDashboard()" id="nav-dash-btn" class="bg-blue-600/20 text-blue-400 border border-blue-500/30 px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Login</button>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center p-6 relative">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-        <h2 class="text-blue-500 font-bold tracking-[0.5em] mb-4 uppercase text-sm">Official Community Hub</h2>
-        <h1 class="text-6xl md:text-8xl font-black mb-6 text-gradient italic">EMPIRE OF ELHAKIM</h1>
-        <p class="text-xl md:text-2xl text-gray-400 font-light italic">Empire of Elhakim: <span class="text-white">Where Dreams Conquer.</span></p>
-        <div class="mt-12 flex flex-wrap gap-4 justify-center">
-            <a href="https://discord.gg/B3M37c5wdt" class="btn-blue px-10 py-4 rounded-2xl font-bold flex items-center gap-2">
-                <i data-lucide="message-square"></i> JOIN THE EMPIRE
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center p-6 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent">
+        <h2 class="text-blue-500 font-bold tracking-[0.6em] mb-4 uppercase text-xs">Official Empire Network</h2>
+        <h1 class="text-6xl md:text-9xl font-black mb-6 text-gradient italic tracking-tighter">EMPIRE OF ELHAKIM</h1>
+        <p class="text-xl md:text-2xl text-gray-400 font-light italic tracking-widest italic">Where Dreams <span class="text-white font-bold underline decoration-blue-600">Conquer.</span></p>
+        <div class="mt-12">
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1483021262144933918&permissions=8&scope=bot" target="_blank" class="btn-blue px-12 py-5 rounded-2xl font-black flex items-center gap-3 tracking-widest uppercase text-sm">
+                <i data-lucide="zap"></i> Connect with Bot
             </a>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-8 max-w-6xl mx-auto">
-        <div class="glass p-12 rounded-[40px] grid md:grid-cols-2 gap-12 items-center navy-shadow">
-            <div>
-                <h2 class="text-3xl font-black mb-6 border-l-4 border-blue-600 pl-4 uppercase italic">About Server</h2>
-                <p class="text-gray-400 leading-relaxed text-lg">
-                    Dibentuk oleh <span class="text-white font-bold">Kaelxx</span>, server ini jadi wadah komunikasi buat kalian semua! Di sini, kita bisa ngobrol, berdiskusi, dan berbagi semua topik yang kalian suka—dari game, teknologi, hobi, sampai hal-hal random yang seru. 
-                    <br><br>
-                    Lebih dari sekadar server, ini adalah <strong>rumah digital kalian</strong>, tempat kumpulnya komunitas yang santai tapi solid. Masuk, temukan teman baru, dan jadilah bagian dari Empire yang terus berkembang!
-                </p>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white/5 p-8 rounded-3xl text-center border border-white/5">
-                    <div class="text-3xl font-black text-blue-500">14.5k</div>
-                    <div class="text-[10px] uppercase tracking-widest text-gray-500">Citizens</div>
-                </div>
-                <div class="bg-white/5 p-8 rounded-3xl text-center border border-white/5">
-                    <div class="text-3xl font-black text-blue-500 font-serif italic">Solid</div>
-                    <div class="text-[10px] uppercase tracking-widest text-gray-500">Community</div>
-                </div>
-            </div>
+    <section id="about" class="py-32 px-8 max-w-6xl mx-auto">
+        <div class="glass p-16 rounded-[50px] border-white/5 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 blur-[100px]"></div>
+            <h2 class="text-4xl font-black mb-8 italic uppercase tracking-tighter border-b border-white/5 pb-4">The <span class="text-blue-500">Origin</span></h2>
+            <p class="text-gray-400 leading-loose text-xl font-light">
+                Dibentuk oleh <span class="text-white font-bold">Kaelxx</span>, server ini jadi wadah komunikasi buat kalian semua! Di sini, kita bisa ngobrol, berdiskusi, dan berbagi semua topik yang kalian suka—dari game, teknologi, hobi, sampai hal-hal random yang seru. 
+                <br><br>
+                Lebih dari sekadar server, ini adalah <strong>rumah digital kalian</strong>, tempat kumpulnya komunitas yang santai tapi solid. Masuk, temukan teman baru, dan jadilah bagian dari Empire yang terus berkembang!
+            </p>
         </div>
     </section>
 
-    <section id="news" class="py-24 px-8 max-w-6xl mx-auto">
-        <div class="flex justify-between items-center mb-12">
-            <h2 class="text-4xl font-black italic uppercase">Empire <span class="text-blue-600">News</span></h2>
-        </div>
-        <div id="news-list" class="grid md:grid-cols-3 gap-8">
+    <section id="news" class="py-32 px-8 max-w-7xl mx-auto">
+        <h2 class="text-5xl font-black italic uppercase mb-16 text-center tracking-widest">Empire <span class="text-blue-600 italic">Feed</span></h2>
+        <div id="news-list" class="grid lg:grid-cols-2 gap-12">
             </div>
     </section>
 
     <div id="dashboard-overlay" class="fixed inset-0 z-[150] bg-[#020617] hidden overflow-y-auto p-8">
-        <div class="max-w-4xl mx-auto">
-            <button onclick="hideDashboard()" class="mb-8 text-gray-500 hover:text-white flex items-center gap-2 font-bold uppercase text-xs">
-                <i data-lucide="arrow-left" class="w-4"></i> Kembali
+        <div class="max-w-5xl mx-auto">
+            <button onclick="hideDashboard()" class="mb-12 text-gray-500 hover:text-white flex items-center gap-2 font-bold uppercase text-[10px] tracking-widest">
+                <i data-lucide="chevron-left" class="w-4"></i> Kembali ke Beranda
             </button>
             
-            <div id="login-screen" class="glass p-12 rounded-[40px] text-center">
-                <i data-lucide="shield-check" class="w-20 h-20 mx-auto mb-6 text-blue-600"></i>
-                <h2 class="text-3xl font-bold mb-4 italic">Discord Authentication</h2>
-                <p class="text-gray-500 mb-8">Anda harus login menggunakan akun Discord untuk akses Dashboard.</p>
-                <button onclick="simulateDiscordLogin()" class="btn-blue px-12 py-4 rounded-2xl font-bold text-lg">LOGIN WITH DISCORD</button>
+            <div id="login-screen" class="glass p-20 rounded-[50px] text-center border-blue-500/20 border-2 shadow-2xl shadow-blue-900/20">
+                <div class="w-24 h-24 bg-blue-600/10 rounded-3xl mx-auto mb-8 flex items-center justify-center border border-blue-500/30">
+                    <i data-lucide="bot" class="w-12 h-12 text-blue-500"></i>
+                </div>
+                <h2 class="text-4xl font-black mb-4 italic uppercase">Identity Required</h2>
+                <p class="text-gray-500 mb-10 max-w-md mx-auto">Login via <b>Elhakim Bot (1483021262144933918)</b> untuk membuka fitur Like, Komentar, dan Dashboard Personalisasi.</p>
+                <button onclick="simulateDiscordLogin()" class="btn-blue px-16 py-5 rounded-2xl font-black text-sm tracking-[0.2em]">AUTHORIZE VIA BOT</button>
             </div>
 
             <div id="user-panel" class="hidden grid md:grid-cols-3 gap-8">
-                <div class="glass p-8 rounded-3xl text-center h-fit">
-                    <img id="user-avatar" src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Kael" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-blue-500 p-1">
-                    <h3 id="display-name" class="text-2xl font-bold italic">User_Elhakim</h3>
-                    <p class="text-xs text-gray-500 font-mono">ID: 145989225</p>
+                <div class="glass p-10 rounded-[40px] text-center border-b-4 border-blue-600">
+                    <img id="user-avatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=Elhakim" class="w-28 h-28 rounded-3xl mx-auto mb-6 border border-white/10 p-2 shadow-2xl">
+                    <h3 id="display-name" class="text-2xl font-black italic tracking-tighter">User_Elhakim</h3>
+                    <p class="text-xs text-blue-500 font-mono mt-2 font-bold">VERIFIED CITIZEN</p>
                 </div>
-                <div class="md:col-span-2 space-y-6">
-                    <div class="glass p-8 rounded-3xl">
-                        <h4 class="font-bold mb-4 uppercase tracking-widest text-blue-500 text-sm">Update Nickname</h4>
-                        <div class="flex gap-2">
-                            <input id="new-nick" type="text" placeholder="Masukkan Nickname Baru" class="input-style flex-1">
-                            <button onclick="updateNickname()" class="btn-blue px-6 rounded-xl font-bold">Save</button>
+                <div class="md:col-span-2 space-y-8">
+                    <div class="glass p-8 rounded-[35px]">
+                        <h4 class="font-black mb-6 uppercase tracking-widest text-blue-500 text-xs">Empire Profile Settings</h4>
+                        <div class="space-y-4">
+                            <label class="block text-[10px] text-gray-500 font-bold uppercase">Change Nickname</label>
+                            <div class="flex gap-3">
+                                <input id="new-nick" type="text" placeholder="Nickname Baru..." class="input-style flex-1 text-sm">
+                                <button onclick="updateNickname()" class="btn-blue px-8 rounded-xl font-bold text-xs uppercase">Update</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="glass p-8 rounded-3xl">
-                        <h4 class="font-bold mb-4 uppercase tracking-widest text-blue-500 text-sm">Account Roles</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-600/20 text-blue-400 border border-blue-600/30 px-3 py-1 rounded-lg text-xs font-bold uppercase">Empire Citizen</span>
-                            <span class="bg-yellow-600/20 text-yellow-400 border border-yellow-600/30 px-3 py-1 rounded-lg text-xs font-bold uppercase">VIP Member</span>
-                        </div>
-                    </div>
-                    <div class="glass p-8 rounded-3xl border-red-900/30">
-                        <h4 class="font-bold mb-2 text-red-500 text-sm uppercase">Riwayat Pelanggaran</h4>
-                        <p class="text-gray-500 italic text-sm font-light">"Bersih! Anda tidak memiliki catatan pelanggaran."</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <section id="contact" class="py-24 px-8 max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16">
+    <section id="contact" class="py-32 px-8 max-w-7xl mx-auto border-t border-white/5">
+        <div class="grid lg:grid-cols-2 gap-20">
             <div>
-                <h2 class="text-4xl font-black mb-8 italic uppercase tracking-tighter">Get In <span class="text-blue-600">Touch</span></h2>
-                <div class="space-y-4">
-                    <a href="https://www.youtube.com/@EmpireofElhakimID" target="_blank" class="glass p-6 rounded-2xl flex items-center gap-4 hover:scale-105 transition">
-                        <i data-lucide="youtube" class="text-red-500"></i> <span class="font-bold tracking-widest">YOUTUBE</span>
+                <h2 class="text-5xl font-black mb-12 italic uppercase tracking-tighter">Connect <span class="text-blue-600">Directly</span></h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="https://www.youtube.com/@EmpireofElhakimID" target="_blank" class="glass p-8 rounded-[30px] flex flex-col gap-4 hover:border-red-600 transition group">
+                        <i data-lucide="youtube" class="text-red-600 w-8 h-8"></i>
+                        <span class="font-black italic text-lg group-hover:tracking-widest transition-all">YOUTUBE</span>
                     </a>
-                    <a href="https://www.instagram.com/empireofelhakim/" target="_blank" class="glass p-6 rounded-2xl flex items-center gap-4 hover:scale-105 transition">
-                        <i data-lucide="instagram" class="text-pink-500"></i> <span class="font-bold tracking-widest">INSTAGRAM</span>
-                    </a>
-                    <a href="https://discord.gg/B3M37c5wdt" target="_blank" class="glass p-6 rounded-2xl flex items-center gap-4 hover:scale-105 transition">
-                        <i data-lucide="message-circle" class="text-blue-500"></i> <span class="font-bold tracking-widest">DISCORD</span>
+                    <a href="https://www.instagram.com/empireofelhakim/" target="_blank" class="glass p-8 rounded-[30px] flex flex-col gap-4 hover:border-pink-500 transition group">
+                        <i data-lucide="instagram" class="text-pink-500 w-8 h-8"></i>
+                        <span class="font-black italic text-lg group-hover:tracking-widest transition-all">INSTAGRAM</span>
                     </a>
                 </div>
             </div>
-            <div class="glass p-10 rounded-[35px] border-t-4 border-blue-600 shadow-2xl shadow-blue-900/20">
-                <div class="space-y-4">
-                    <input id="c-name" type="text" placeholder="Nama Lengkap" class="input-style w-full">
-                    <input id="c-email" type="email" placeholder="Email Aktif" class="input-style w-full">
-                    <input id="c-discord" type="text" placeholder="Username Discord" class="input-style w-full">
-                    <textarea id="c-desc" placeholder="Jelaskan keperluan Anda..." rows="4" class="input-style w-full"></textarea>
-                    <button onclick="submitContact()" class="btn-blue w-full py-4 rounded-xl font-black uppercase tracking-[0.2em]">Kirim Pesan</button>
+            <div class="glass p-12 rounded-[50px] shadow-2xl">
+                <div class="space-y-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input id="c-name" type="text" placeholder="Nama Lengkap" class="input-style">
+                        <input id="c-discord" type="text" placeholder="User#0000" class="input-style">
+                    </div>
+                    <input id="c-email" type="email" placeholder="Email" class="input-style w-full">
+                    <textarea id="c-desc" placeholder="Jelaskan secara detail..." rows="4" class="input-style w-full"></textarea>
+                    <button onclick="submitContact()" class="btn-blue w-full py-5 rounded-2xl font-black uppercase tracking-widest text-sm">Submit Form</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="admin-modal" class="fixed inset-0 z-[200] bg-black/95 hidden flex items-center justify-center p-6">
-        <div class="w-full max-w-md glass p-10 rounded-[40px] text-center relative border-blue-600/30 border-2">
-            <button onclick="toggleAdminModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white"><i data-lucide="x"></i></button>
-            <h2 class="text-3xl font-black mb-2 italic">MASTER <span class="text-blue-600">LOGIN</span></h2>
-            <p class="text-gray-500 text-xs mb-8 uppercase tracking-widest">Authorized Personnel Only</p>
+    <div id="admin-panel" class="fixed inset-0 z-[300] bg-[#020617] hidden overflow-y-auto">
+        <div class="p-10 max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16 border-b border-white/5 pb-10">
+                <div>
+                    <h1 class="text-5xl font-black italic tracking-tighter">EMPIRE <span class="text-blue-600">OS</span></h1>
+                    <p class="text-gray-500 font-mono text-xs mt-2 uppercase tracking-widest">Status: Master Admin Root Access</p>
+                </div>
+                <button onclick="location.reload()" class="bg-red-500/10 text-red-500 border border-red-500/20 px-8 py-3 rounded-2xl font-black text-xs hover:bg-red-500 hover:text-white transition">SHUTDOWN</button>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-10">
+                <div class="lg:col-span-1 space-y-8">
+                    <div class="glass p-8 rounded-[40px] border-l-8 border-blue-600">
+                        <h3 class="text-gray-500 text-[10px] font-black tracking-[0.3em] uppercase mb-4">Post Article</h3>
+                        <div class="space-y-4">
+                            <input id="news-title" type="text" placeholder="Judul Berita" class="input-style w-full text-sm">
+                            <input id="news-img" type="text" placeholder="URL Image" class="input-style w-full text-sm">
+                            <textarea id="news-body" placeholder="Konten..." rows="4" class="input-style w-full text-sm"></textarea>
+                            <button onclick="createNews()" class="btn-blue w-full py-4 rounded-xl font-black uppercase text-xs">Publish Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 glass p-10 rounded-[40px]">
+                    <h3 class="text-xl font-black italic uppercase mb-8 flex items-center gap-3">
+                        <i data-lucide="mail" class="text-blue-500"></i> Inbound Messages
+                    </h3>
+                    <div id="contact-inbox" class="space-y-4">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-modal" class="fixed inset-0 z-[200] bg-black/98 hidden flex items-center justify-center p-6 backdrop-blur-3xl">
+        <div class="w-full max-w-md glass p-12 rounded-[50px] text-center border-t-2 border-blue-500">
+            <h2 class="text-3xl font-black mb-8 italic uppercase tracking-widest">Admin <span class="text-blue-600">Auth</span></h2>
             <div class="space-y-4">
                 <input id="adm-user" type="text" placeholder="Username" class="input-style w-full">
                 <input id="adm-pass" type="password" placeholder="Password" class="input-style w-full">
-                <button onclick="handleAdminLogin()" class="btn-blue w-full py-4 rounded-xl font-bold uppercase tracking-widest">AUTHENTICATE</button>
+                <button onclick="handleAdminLogin()" class="btn-blue w-full py-5 rounded-2xl font-black uppercase text-xs tracking-widest">Verify Admin</button>
+                <button onclick="toggleAdminModal()" class="text-gray-600 text-[10px] uppercase font-bold mt-4">Cancel</button>
             </div>
         </div>
     </div>
 
-    <div id="admin-panel" class="fixed inset-0 z-[250] bg-[#020617] hidden overflow-y-auto">
-        <div class="p-8 max-w-7xl mx-auto">
-            <div class="flex justify-between items-center mb-12 border-b border-white/5 pb-8">
-                <div>
-                    <h1 class="text-4xl font-black italic">EMPIRE CONTROL <span class="text-blue-500">CENTER</span></h1>
-                    <p class="text-gray-500 font-mono text-sm mt-1">Status: Master Admin Online</p>
-                </div>
-                <button onclick="location.reload()" class="bg-red-500/10 text-red-500 border border-red-500/20 px-6 py-2 rounded-xl font-bold hover:bg-red-500 hover:text-white transition">LOGOUT</button>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8 mb-12">
-                <div class="glass p-6 rounded-3xl border-l-4 border-blue-600">
-                    <div class="text-gray-500 uppercase text-[10px] font-bold tracking-[0.2em] mb-2">Server ID</div>
-                    <div class="text-xl font-black italic">1459892256986370224</div>
-                </div>
-                <div class="glass p-6 rounded-3xl border-l-4 border-green-600">
-                    <div class="text-gray-500 uppercase text-[10px] font-bold tracking-[0.2em] mb-2">Inbound Messages</div>
-                    <div id="inbox-count" class="text-2xl font-black">0</div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="glass p-8 rounded-[35px]">
-                    <h3 class="text-xl font-black mb-6 uppercase italic tracking-wider border-b border-white/5 pb-4 flex items-center gap-2">
-                        <i data-lucide="plus-circle" class="text-blue-500"></i> Buat Berita Baru
-                    </h3>
-                    <div class="space-y-4">
-                        <input id="news-title" type="text" placeholder="Judul Artikel" class="input-style w-full">
-                        <input id="news-img" type="text" placeholder="URL Gambar Berita" class="input-style w-full">
-                        <textarea id="news-body" placeholder="Konten berita..." rows="5" class="input-style w-full"></textarea>
-                        <button onclick="createNews()" class="btn-blue w-full py-4 rounded-xl font-black uppercase tracking-widest">Publikasikan Berita</button>
-                    </div>
-                </div>
-                <div class="glass p-8 rounded-[35px]">
-                    <h3 class="text-xl font-black mb-6 uppercase italic tracking-wider border-b border-white/5 pb-4 flex items-center gap-2">
-                        <i data-lucide="inbox" class="text-blue-500"></i> Pesan Masuk
-                    </h3>
-                    <div id="contact-inbox" class="space-y-4 max-h-[400px] overflow-y-auto pr-2 italic text-gray-500">
-                        Belum ada pesan yang masuk.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="py-12 border-t border-white/5 text-center text-gray-600 text-xs tracking-widest font-bold">
-        <p>© 2026 EMPIRE OF ELHAKIM. CREATED BY THE EMPIRE.</p>
-        <div onclick="toggleAdminModal()" class="mt-4 hover:text-white cursor-pointer transition uppercase underline">Admin Control Panel</div>
+    <footer class="py-20 text-center border-t border-white/5 opacity-40 hover:opacity-100 transition">
+        <p class="text-[10px] font-black tracking-[0.5em] uppercase">© 2026 Empire of Elhakim | Built for Conquerors</p>
+        <div onclick="toggleAdminModal()" class="mt-6 cursor-pointer text-[10px] uppercase font-bold text-blue-950 hover:text-blue-500 transition">Access Root</div>
     </footer>
 
     <script>
-        // Initialize ICONS
         lucide.createIcons();
 
-        // 1. DATA INITIALIZATION (LOCAL STORAGE)
-        if(!localStorage.getItem('news')) {
-            const defaultNews = [{
-                title: 'Empire Website v1.0 Launched',
-                body: 'Selamat datang di rumah digital kita yang baru. Where dreams conquer!',
-                img: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=600',
-                likes: 88
-            }];
-            localStorage.setItem('news', JSON.stringify(defaultNews));
+        // 1. STATE & STORAGE
+        let currentUser = JSON.parse(localStorage.getItem('empire_user')) || null;
+        if(!localStorage.getItem('news_v2')) {
+            localStorage.setItem('news_v2', JSON.stringify([{
+                id: Date.now(),
+                title: 'Empire Rise: The New Era',
+                body: 'Motto baru kita: Empire of Elhakim: Where Dreams Conquer.',
+                img: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800',
+                likes: [],
+                comments: []
+            }]));
         }
-        if(!localStorage.getItem('inbox')) localStorage.setItem('inbox', JSON.stringify([]));
 
-        // 2. DASHBOARD FUNCTIONS
+        // 2. AUTH FUNCTIONS
         function showDashboard() { document.getElementById('dashboard-overlay').classList.remove('hidden'); }
         function hideDashboard() { document.getElementById('dashboard-overlay').classList.add('hidden'); }
-        
+
         function simulateDiscordLogin() {
             const btn = event.currentTarget;
-            btn.innerHTML = "Authenticating...";
+            btn.innerHTML = "REDIRECTING TO BOT...";
             setTimeout(() => {
+                currentUser = { 
+                    name: localStorage.getItem('user_nick') || "Citizen_Empire", 
+                    id: "1483021262144933918",
+                    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=" + Math.random() 
+                };
+                localStorage.setItem('empire_user', JSON.stringify(currentUser));
+                updateUI();
+                alert("Login Berhasil via Bot 1483021262144933918!");
+            }, 1500);
+        }
+
+        function updateUI() {
+            if(currentUser) {
                 document.getElementById('login-screen').classList.add('hidden');
                 document.getElementById('user-panel').classList.remove('hidden');
-                const savedNick = localStorage.getItem('user_nick') || "User_Elhakim";
-                document.getElementById('display-name').innerText = savedNick;
-            }, 1200);
+                document.getElementById('display-name').innerText = currentUser.name;
+                document.getElementById('nav-dash-btn').innerText = "Dashboard";
+                document.getElementById('nav-dash-btn').classList.replace('text-blue-400', 'text-green-400');
+            }
+            renderNews();
         }
 
         function updateNickname() {
             const nick = document.getElementById('new-nick').value;
             if(nick) {
+                currentUser.name = nick;
+                localStorage.setItem('empire_user', JSON.stringify(currentUser));
                 localStorage.setItem('user_nick', nick);
-                document.getElementById('display-name').innerText = nick;
-                alert("Nickname server berhasil diubah!");
-                document.getElementById('new-nick').value = "";
+                updateUI();
+                alert("Nickname Updated!");
             }
         }
 
-        // 3. NEWS SYSTEM
+        // 3. NEWS, LIKE & COMMENT SYSTEM
         function renderNews() {
-            const newsList = JSON.parse(localStorage.getItem('news'));
+            const news = JSON.parse(localStorage.getItem('news_v2'));
             const container = document.getElementById('news-list');
-            container.innerHTML = newsList.map((item, index) => `
-                <div class="glass rounded-[30px] overflow-hidden group border border-white/5 hover:border-blue-500 transition duration-500">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="${item.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-black italic mb-2 tracking-tighter">${item.title}</h4>
-                        <p class="text-gray-500 text-sm mb-4 line-clamp-3">${item.body}</p>
-                        <div class="flex justify-between items-center border-t border-white/5 pt-4">
-                            <button onclick="likeNews(${index})" class="flex items-center gap-2 hover:text-red-500 text-xs font-bold transition">
-                                <i data-lucide="heart" class="w-4 h-4"></i> ${item.likes}
+            container.innerHTML = news.map(item => `
+                <div class="glass rounded-[40px] overflow-hidden border border-white/5 flex flex-col h-full">
+                    <img src="${item.img}" class="h-64 w-full object-cover opacity-80">
+                    <div class="p-10 flex flex-col flex-1">
+                        <h3 class="text-3xl font-black italic mb-4 uppercase tracking-tighter">${item.title}</h3>
+                        <p class="text-gray-400 mb-8 font-light">${item.body}</p>
+                        
+                        <div class="flex gap-6 mb-8 border-y border-white/5 py-4">
+                            <button onclick="handleLike(${item.id})" class="flex items-center gap-2 text-xs font-bold ${item.likes.includes(currentUser?.id) ? 'text-red-500' : 'text-gray-500'} transition hover:scale-110">
+                                <i data-lucide="heart" class="w-5 h-5"></i> ${item.likes.length}
                             </button>
-                            <div class="flex gap-4">
-                                <i data-lucide="message-circle" class="w-4 h-4 cursor-pointer hover:text-blue-500"></i>
-                                <i data-lucide="share-2" class="w-4 h-4 cursor-pointer hover:text-blue-500" onclick="alert('Link berhasil disalin!')"></i>
+                            <div class="flex items-center gap-2 text-xs font-bold text-gray-500">
+                                <i data-lucide="message-square" class="w-5 h-5"></i> ${item.comments.length} Komentar
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            ${item.comments.map(c => `
+                                <div class="comment-box">
+                                    <div class="text-[10px] font-black text-blue-500 uppercase italic">${c.user}</div>
+                                    <div class="text-sm text-gray-400">${c.text}</div>
+                                </div>
+                            `).join('')}
+                            
+                            <div class="mt-6">
+                                ${currentUser ? `
+                                    <div class="flex gap-2">
+                                        <input id="input-comm-${item.id}" type="text" placeholder="Tulis komentar..." class="input-style flex-1 text-xs">
+                                        <button onclick="addComment(${item.id})" class="bg-blue-600 px-4 rounded-xl font-bold text-[10px] uppercase">Post</button>
+                                    </div>
+                                ` : `<p class="text-[10px] text-gray-600 italic uppercase">Login untuk Like & Komentar</p>`}
                             </div>
                         </div>
                     </div>
@@ -279,81 +279,80 @@
             lucide.createIcons();
         }
 
-        function likeNews(index) {
-            let news = JSON.parse(localStorage.getItem('news'));
-            news[index].likes += 1;
-            localStorage.setItem('news', JSON.stringify(news));
+        function handleLike(id) {
+            if(!currentUser) return showDashboard();
+            let news = JSON.parse(localStorage.getItem('news_v2'));
+            let item = news.find(n => n.id === id);
+            if(item.likes.includes(currentUser.id)) {
+                item.likes = item.likes.filter(l => l !== currentUser.id);
+            } else {
+                item.likes.push(currentUser.id);
+            }
+            localStorage.setItem('news_v2', JSON.stringify(news));
             renderNews();
         }
 
-        // 4. ADMIN & CONTACT SYSTEM
+        function addComment(id) {
+            const input = document.getElementById(`input-comm-${id}`);
+            if(!input.value) return;
+            let news = JSON.parse(localStorage.getItem('news_v2'));
+            let item = news.find(n => n.id === id);
+            item.comments.push({ user: currentUser.name, text: input.value });
+            localStorage.setItem('news_v2', JSON.stringify(news));
+            input.value = "";
+            renderNews();
+        }
+
+        // 4. ADMIN & CONTACT
         function toggleAdminModal() { document.getElementById('admin-modal').classList.toggle('hidden'); }
-        
         function handleAdminLogin() {
             const u = document.getElementById('adm-user').value;
             const p = document.getElementById('adm-pass').value;
             if(u === "AdminEmpireofElhakim" && p === "Elhakim11") {
                 document.getElementById('admin-modal').classList.add('hidden');
                 document.getElementById('admin-panel').classList.remove('hidden');
-                renderInbox();
-            } else {
-                alert("Username/Password Admin Salah!");
-            }
-        }
-
-        function submitContact() {
-            const name = document.getElementById('c-name').value;
-            const email = document.getElementById('c-email').value;
-            const discord = document.getElementById('c-discord').value;
-            const desc = document.getElementById('c-desc').value;
-            
-            if(!name || !desc) return alert("Harap isi semua formulir!");
-            
-            const inbox = JSON.parse(localStorage.getItem('inbox'));
-            inbox.unshift({ name, email, discord, desc, date: new Date().toLocaleString() });
-            localStorage.setItem('inbox', JSON.stringify(inbox));
-            
-            alert("Pesan berhasil terkirim ke panel admin!");
-            document.querySelectorAll('#contact input, #contact textarea').forEach(el => el.value = "");
-        }
-
-        function renderInbox() {
-            const inbox = JSON.parse(localStorage.getItem('inbox'));
-            document.getElementById('inbox-count').innerText = inbox.length;
-            const container = document.getElementById('contact-inbox');
-            if(inbox.length === 0) {
-                container.innerHTML = "Belum ada pesan masuk.";
-                return;
-            }
-            container.innerHTML = inbox.map(item => `
-                <div class="bg-white/5 p-4 rounded-xl border border-white/10 text-xs">
-                    <div class="font-black text-blue-500 mb-1 uppercase tracking-tighter">${item.name} (${item.discord})</div>
-                    <div class="text-gray-300 mb-2 leading-relaxed">${item.desc}</div>
-                    <div class="text-[8px] text-gray-600 uppercase tracking-widest">${item.date} | ${item.email}</div>
-                </div>
-            `).join('');
+                renderAdminData();
+            } else { alert("Wrong Access Code!"); }
         }
 
         function createNews() {
             const title = document.getElementById('news-title').value;
             const body = document.getElementById('news-body').value;
-            const img = document.getElementById('news-img').value || 'https://images.unsplash.com/photo-1550745165-9bc0b252726f';
-            
-            if(!title || !body) return alert("Judul dan Konten wajib diisi!");
-            
-            const news = JSON.parse(localStorage.getItem('news'));
-            news.unshift({ title, body, img, likes: 0 });
-            localStorage.setItem('news', JSON.stringify(news));
-            
-            alert("Berita Berhasil Dipublikasikan!");
+            const img = document.getElementById('news-img').value || 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800';
+            if(!title || !body) return;
+            let news = JSON.parse(localStorage.getItem('news_v2'));
+            news.unshift({ id: Date.now(), title, body, img, likes: [], comments: [] });
+            localStorage.setItem('news_v2', JSON.stringify(news));
+            alert("News Published!");
             renderNews();
-            document.getElementById('news-title').value = "";
-            document.getElementById('news-body').value = "";
-            document.getElementById('news-img').value = "";
         }
 
-        // Initial Render
-        renderNews();
+        function submitContact() {
+            const data = {
+                name: document.getElementById('c-name').value,
+                discord: document.getElementById('c-discord').value,
+                desc: document.getElementById('c-desc').value,
+                time: new Date().toLocaleTimeString()
+            };
+            let inbox = JSON.parse(localStorage.getItem('empire_inbox')) || [];
+            inbox.unshift(data);
+            localStorage.setItem('empire_inbox', JSON.stringify(inbox));
+            alert("Sent to Admin!");
+        }
+
+        function renderAdminData() {
+            const inbox = JSON.parse(localStorage.getItem('empire_inbox')) || [];
+            document.getElementById('contact-inbox').innerHTML = inbox.map(i => `
+                <div class="bg-white/5 p-6 rounded-3xl border border-white/5">
+                    <div class="text-blue-500 font-black text-xs uppercase italic">${i.name} | ${i.discord}</div>
+                    <div class="text-gray-400 text-sm mt-2">${i.desc}</div>
+                    <div class="text-[8px] text-gray-700 mt-3 font-mono">${i.time}</div>
+                </div>
+            `).join('');
+        }
+
+        // INITIAL RUN
+        updateUI();
     </script>
 </body>
 </html>
